@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Journal</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ journal.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ journal.type }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ journal.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Debut</th>
+                <td>{{ journal.debut }}</td>
+            </tr>
+            <tr>
+                <th>Fin</th>
+                <td>{{ journal.fin }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{% if journal.statut %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Flag</th>
+                <td>{{ journal.flag }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ journal.slug }}</td>
+            </tr>
+            <tr>
+                <th>Publiepar</th>
+                <td>{{ journal.publiePar }}</td>
+            </tr>
+            <tr>
+                <th>Modifiepar</th>
+                <td>{{ journal.modifiePar }}</td>
+            </tr>
+            <tr>
+                <th>Publiele</th>
+                <td>{{ journal.publieLe }}</td>
+            </tr>
+            <tr>
+                <th>Modifiele</th>
+                <td>{{ journal.modifieLe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('backend_journal_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('backend_journal_edit', { 'id': journal.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

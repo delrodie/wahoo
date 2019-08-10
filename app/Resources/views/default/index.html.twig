@@ -92,8 +92,8 @@
         <nav class="user-nav">
             <ul>
                 <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/settings.png')) }}" alt="Code d'invisibilité" title="Code d'invisibilité" /><span>Mon code d'invisibilité</span></a></li>
-                <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Se connecter" title="Se connecter" /><span>Connexion</span><!--<strong>5</strong>--></a></li>
-                <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Deconnexion" title="Deconnexion" /><span>Déconnexion</span></a></li>
+                <li><a href="{{ path('backend_journal_index') }}"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Se connecter" title="Se connecter" /><span>Connexion</span><!--<strong>5</strong>--></a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Deconnexion" title="Deconnexion" /><span>Déconnexion</span></a></li>
             </ul>
         </nav>
     </div>

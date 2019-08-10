@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Journals list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Libelle</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for journal in journals %}
+            <tr>
+                <td><a href="{{ path('backend_journal_edit', {'id': journal.id}) }}">{{ journal.dateEvent|date('d')}}</a></td>
+                <td><p style="margin-bottom: 10px;"><strong><em>{{ journal.debut }} - {{ journal.fin }}</em></strong> : {{ journal.libelle }}</p></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div style="margin-top: 50px; text-align:right; padding-right: 10px;">
+        <a href="{{ path('backend_journal_new') }}" class="form_submit"><strong>Ajouter un programme</strong></a>
+    </div>
+
+{% endblock %}
