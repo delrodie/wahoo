@@ -23,4 +23,22 @@ class JournalRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
             ;
     }
+
+    /**
+     *
+     */
+    public function findActiviteEncours()
+    {
+        $temps = time() - (2*60*60);
+        return $this->createQueryBuilder('j')
+                    ->where('j.statut = 1')
+                    ->andWhere('j.dateEvent = :date')
+                    ->andWhere(':periode BETWEEN j.debut AND j.fin')
+                    ->setParameters([
+                        'date'=> date('Y-m-d', time()),
+                        'periode' => date('H:i', $temps)
+                    ])
+                    ->getQuery()->getResult()
+            ;
+    }
 }

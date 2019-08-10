@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Jamboree 2019: Mot de bienvenue du Commissaire National{% endblock %}
+{% block refresh %}<meta http-equiv="refresh" content="30" >{% endblock %}
+{% block body %}
+	<div id="pages_maincontent">
+
+		<h2 class="page_title">Activité en cours</h2>
+
+
+		<div class="page_single layout_fullwidth_padding">
+
+			{% for activite in 	activites %}
+				<h6><em><b><u>{{ activite.type }}</u></b></em></h6>
+				<h6><b>{{ activite.debut}}-{{ activite.fin }}</b>&nbsp; &nbsp; {{ activite.libelle}}</h6>
+				<h6><b>RMO</b>&nbsp; &nbsp; {{ activite.rmo}}</h6>
+				<br>
+			{% else %}
+				<h6><b>Aucune activité officielle pour l'instant.</b></h6>
+				<h6><em><a href="https://scoutascci.github.io/jamboree2019/programme.html">Voir le programme</a></em></h6>
+			{% endfor %}
+
+		</div>
+
+
+
+
+	</div>
+{% endblock %}
