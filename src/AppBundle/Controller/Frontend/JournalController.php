@@ -17,10 +17,11 @@ class JournalController extends Controller
      */
     public function indexAction()
     {
+
         $em = $this->getDoctrine()->getManager();
         $journal = $em->getRepository("AppBundle:Journal")->findActiviteEncours();
         return $this->render('default/journal.html.twig',[
-            'activites' => $journal
+            'activites' => $journal,
         ]);
     }
 }
