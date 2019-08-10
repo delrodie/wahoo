@@ -1,13 +1,140 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
+    <title>{% block title %}Jamboree 2019{% endblock %}</title>
+
+    <meta name="keywords" content="Jamboree, SCOUT, OMMS, ASCCI, scoutisme"  />
+    <meta name="description" content="Le Jamboree Attoumglan 2019 qui se déroulera du 09 au 19 Aout 2019 sera un rassemblement national de 10 000 jeunes et adultes organisés par l’ASCCI" />
+    <meta name="Author" content="ASCCI-CENACOM, Delrodie AMOIKON">
+    <meta name="Copyright" content="https://www.scoutascci.org">
+    <meta name="Content-Language" content="FR">
+
+    <link rel="canonical" href="https://ascci.github.io/jamboree" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="Item" />
+    <meta property="og:title" content="ASCCI Jamboree 2019" />
+    <meta property="og:description" content="Le Jamboree Attoumglan 2019 qui se déroulera du 09 au 19 Aout 2019 sera un rassemblement national de 10 000 jeunes et adultes organisés par l’ASCCI" />
+    <meta property="og:url" content="https://scoutascci.github.io/jamboree2019" />
+    <meta property="og:site_name" content="ASCCI Jamboree" />
+    <meta property="article:section" content="Item" />
+    <meta property="article:published_time" content="2018-01-20T15:25:59+00:00" />
+    <meta property="og:image" content="image/jamboree.png" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="Le Jamboree Attoumglan 2019 qui se déroulera du 09 au 19 Aout 2019 sera un rassemblement national de 10 000 jeunes et adultes organisés par l’ASCCI"/>
+    <meta name="twitter:title" content="ASCCI Jamboree 2019"/>
+    <meta name="twitter:domain" content="ASCCI"/>
+    <meta name="twitter:image:src" content="images/jamboree.png"/>
+
+    <link rel="apple-touch-icon" href="{{ absolute_url(asset('ressources/images/jamboree.png')) }}" />
+    <link rel="apple-touch-startup-image" href="{{ absolute_url(asset('ressources/images/icon-192.png')) }}">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ absolute_url(asset('ressources/css/swiper.css')) }}">
+        <link rel="stylesheet" href="{{ absolute_url(asset('ressources/style.css')) }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+    <body id="mobile_wrap">
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-reveal">
+        <!-- Slider -->
+        <div class="swiper-container-subnav multinav">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <nav class="main_nav_underline">
+                        <ul>
+                            <li><a href="{{ absolute_url(path('homepage'))}}"><img src="{{ absolute_url(asset('ressources/images/icons/gray/home.png')) }}" alt="Accueil" title="Accueil" /><span>Accueil</span></a></li>
+                            <li class="subnav opensubnav"><img src="{{ absolute_url(asset('ressources/images/icons/gray/categories.png')) }}" alt="Participer a Jamboree 2019" title="Participer a Jamboree 2019" /><span>Participation</span></li>
+                            <li><a href="https://scoutascci.org/#actu_jamboree"><img src="{{ absolute_url(asset('ressources/images/icons/gray/mobile.png')) }}" alt="Actualites" title="Actualites" /><span>Actualités</span></a></li>
+                            <li><a href="comite.html"><img src="{{ absolute_url(asset('ressources/images/icons/gray/users.png')) }}" alt="Comité d'organisation" title="Comité d'organisation" /><span>Comité</span></a></li>
+                            <li><a href="{{ path('frontend_programme') }}"><img src="{{ absolute_url(asset('ressources/images/icons/gray/blog.png')) }}" alt="Programme" title="Programme" /><span>Programme</span></a></li>
+                            <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/photos.png')) }}" alt="Site du jamboree" title="Site du jamboree" /><span>Site</span></a></li>
+
+
+                            <li><a href="https://scoutascci.org/boutique/"><img src="{{ absolute_url(asset('ressources/images/icons/gray/shop.png')) }}" alt="Boutique" title="Boutique" /><span>Boutique</span></a></li>
+
+                            <!--<li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Login</span></a></li>-->
+
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="swiper-slide">
+                    <div class="subnav_header backtonav"><img src="{{ absolute_url(asset('ressources/images/icons/gray/back.png')) }}" alt="Retour au menu" title="Retour au menu" /><span>RETOUR AU MENU</span></div>
+                    <nav class="main_nav_underline">
+                        <ul>
+
+                            <!--<li><a href="http://jamboree.scoutascci.org/#register"><img src="images/icons/gray/features.png" alt="S'inscrire au jamboree 2019" title="S'inscrire au jamboree 2019" /><span>Inscription</span></a></li>-->
+                            <li><a href="http://jamboree.scoutascci.org/ticket"><img src="{{ absolute_url(asset('ressources/images/icons/gray/form.png')) }}" alt="Impression du ticket" title="Impression du ticket" /><span>Imprimé son reçu</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-right panel-reveal">
+        <div class="user_login_info">
+
+            <div class="user_thumb">
+
+                <div class="user_details">
+                    <p>Bonjour cher, <span>campeur</span></p>
+                </div>
+                <div class="user_avatar"><img src="{{ absolute_url(asset('ressources/images/jamboree.png')) }}" alt="logo Jamboree 2019" title="Logo Jamboree 2019" /></div>
+            </div>
+
+            <nav class="user-nav">
+                <ul>
+                    <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/settings.png')) }}" alt="Code d'invisibilité" title="Code d'invisibilité" /><span>Mon code d'invisibilité</span></a></li>
+                    <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Se connecter" title="Se connecter" /><span>Connexion</span><!--<strong>5</strong>--></a></li>
+                    <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Deconnexion" title="Deconnexion" /><span>Déconnexion</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="views">
+
+        <div class="view view-main">
+            <div class="pages">
+                <div data-page="tabs" class="page">
+                    <div class="page-content">
+
+                        <div class="navbar navbar--fixed navbar--fixed-top navbar--bg">
+                            <div class="navbar__col navbar__col--title">
+                                <a href="#" class="go-to-back"><img src="{{ absolute_url(asset('ressources/images/go-to-back.png')) }}" alt=""></a>
+                            </div>
+                            <div class="navbar__col navbar__col--title">
+                                <a href="{{ path('homepage') }}">Jamboree 2019</a>
+                            </div>
+                            <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                                <a href="{{ path('frontend_programme') }}"><img src="{{ absolute_url(asset('ressources/images/icons/white/blog.png')) }}" alt="" title="" /></a>
+                            </div>
+                            <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                                <a href="#" data-panel="right" class="open-panel"><img src="{{ absolute_url(asset('ressources/images/icons/white/user.png')) }}" alt="" title="" /></a>
+                            </div>
+                            <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                                <a href="#" data-panel="left" class="open-panel"><img src="{{ absolute_url(asset('ressources/images/icons/white/menu.png')) }}" alt="" title="" /></a>
+                            </div>
+                        </div>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% block javascripts %}
+        <script src="{{ absolute_url(asset('ressources/js/jquery-3.3.1.min.js')) }}"></script>
+        <script src="{{ absolute_url(asset('ressources/js/swiper.min.js')) }}"></script>
+        <script src="{{ absolute_url(asset('ressources/js/jquery.validate.min.js')) }}"></script>
+        <script src="{{ absolute_url(asset('ressources/js/jquery.custom.js')) }}"></script>
+    {% endblock %}
     </body>
 </html>

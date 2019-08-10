@@ -18,4 +18,13 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+
+    /**
+     * @Route("/mot-de-bienvenue", name="mot_bienvenue")
+     */
+    public function bienvenueAction()
+    {
+        return $this->render('default/bienvenue.html.twig');
+    }
+
 }

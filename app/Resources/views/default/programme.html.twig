@@ -1,0 +1,242 @@
+{% extends 'base.html.twig' %}
+{% block title %}Jamboree 2019: Mot de bienvenue du Commissaire National{% endblock %}
+{% block body %}
+	<div id="pages_maincontent">
+
+		<h2 class="page_title">Programme</h2>
+		<P>Cliquez sur la date pour voir l'activité</P>
+		<div class="page_single layout_fullwidth_padding">
+
+			<div class="accordion">
+				<div class="accordion__item">
+					<input class="accordion__input" id="acc1" type="radio" name="accordion">
+					<label class="accordion__label" for="acc1">09 Août 2019 (Jour 1)<span></span></label>
+					<div class="accordion__content">
+						<p></p>
+						<p style="font-weight: bold; font-style: italic">
+							<a href="#" title="Cliquez pour voir les details">Accueil des délégations</a>
+						</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="accordion__item">
+					<input class="accordion__input" id="acc2" type="radio" name="accordion">
+					<label class="accordion__label" for="acc2">10 Août 2019  (Jour 2)<span></span></label>
+					<div class="accordion__content">
+						<p></p>
+						<p style="font-weight: bold; font-style: italic">
+							<a href="#" title="Cliquez pour les voir les details">Installation</a>
+						</p>
+						<p></p>
+					</div>
+				</div>
+				<div class="accordion__item">
+					<input class="accordion__input" id="acc3" type="radio" name="accordion">
+					<label class="accordion__label" for="acc3">11 Août 2019  (Jour 3)<span></span></label>
+					<div class="accordion__content">
+						<p></p>
+						<p style="font-weight: bold; font-style: italic">
+							<a href="#" title="Cliquez pour voir les details">Spiritualité</a>
+							<div class="page_single layout_fullwidth_padding">
+								<div class="tabs">
+									<input type="radio" name="tabs3" class="tabradio" id="tab3" checked="checked">
+									<label class="tablabel tablabel--13" for="tab3">Matin</label>
+									<div class="tab">
+										<h6><b>9h-11h</b>&nbsp; &nbsp; Messe de célébration des 80 ans
+											d’existence du scoutisme en Côte
+											d’Ivoire </h6>
+						<p></p>
+					</div>
+					<input type="radio" name="tabs3" class="tabradio" id="tab4">
+					<label class="tablabel tablabel--13" for="tab4">Après-midi</label>
+					<div class="tab">
+						<h6><b>16h-18h</b>&nbsp; &nbsp; Adoration du Saint sacrément </h6>
+						<h6><b>18h-19h</b>&nbsp; &nbsp; Rencontre avec les encadreurs par branche </h6>
+						<p></p>
+					</div>
+					<input type="radio" name="tabs3" class="tabradio" id="tab5">
+					<label class="tablabel tablabel--13" for="tab5">Soir</label>
+					<div class="tab">
+						<h6><b>21h-22h</b>&nbsp; &nbsp; Veillée par région </h6>
+						<p></p>
+					</div>
+				</div>
+
+			</div>
+			</p>
+			<p></p>
+		</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc4" type="radio" name="accordion">
+		<label class="accordion__label" for="acc4">12 Août 2019  (Jour 4)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<a href="{{ path('frontend_programme_jour', {'jour': 12}) }}" title="Cliquez pour voir les details">Détails de la journée</a>
+			</p>
+			<p></p>
+		</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc5" type="radio" name="accordion">
+		<label class="accordion__label" for="acc5">13 Août 2019  (Jour 5)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<a href="#" title="Cliquez pour voir les details">Activités générales </a>
+				<div class="page_single layout_fullwidth_padding">
+					<div class="tabs">
+						<input type="radio" name="tabs3" class="tabradio" id="tab7" checked="checked">
+						<label class="tablabel tablabel--13" for="tab7">Matin</label>
+						<div class="tab">
+							<h6><b>10h-12h</b>&nbsp; &nbsp; Cérémonie officielle d’ouverture du Jamborée 2019 </h6>
+							<h6><b>12h30-13h</b>&nbsp; &nbsp; Cocktail pour les invités </h6>
+			<p></p>
+		</div>
+		<input type="radio" name="tabs3" class="tabradio" id="tab8">
+		<label class="tablabel tablabel--13" for="tab8">Après-midi</label>
+		<div class="tab">
+			<h6><b>16h-19h</b>&nbsp; &nbsp; Parade générale + feux d’artifice </h6>
+			<p></p>
+		</div>
+		<input type="radio" name="tabs3" class="tabradio" id="tab9">
+		<label class="tablabel tablabel--13" for="tab9">Soir</label>
+		<div class="tab">
+			<h6><b>21h-22h30</b>&nbsp; &nbsp; Nuit du tisonnier </h6>
+			<p></p>
+		</div>
+	</div>
+
+	</div>
+	</p>
+	<p></p>
+	</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc6" type="radio" name="accordion">
+		<label class="accordion__label" for="acc6">14 Août 2019  (Jour 6)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<a href="{{ path('frontend_programme_jour', {'jour': 14}) }}" title="Cliquez pour voir les details">Détails de la journée</a>
+			</p>
+			<p></p>
+		</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc7" type="radio" name="accordion">
+		<label class="accordion__label" for="acc7">15 Août 2019  (Jour 7)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<a href="{{ path('frontend_programme_jour', {'jour': 15}) }}" title="Cliquez pour voir les details">Détails de la journée</a>
+			</p>
+			<p></p>
+		</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc8" type="radio" name="accordion">
+		<label class="accordion__label" for="acc8">16 Août 2019  (Jour 8)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<a href="{{ path('frontend_programme_jour', {'jour': 16}) }}" title="Cliquez pour voir les details">Détails de la Journée</a>
+			</p>
+			<p></p>
+		</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc9" type="radio" name="accordion">
+		<label class="accordion__label" for="acc9">17 Août 2019  (Jour 9)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<div class="page_single layout_fullwidth_padding">
+					<div class="tabs">
+						<input type="radio" name="tabs3" class="tabradio" id="tab10" checked="checked">
+						<label class="tablabel tablabel--13" for="tab10">Matin</label>
+						<div class="tab">
+							<h6><b>6h-15h</b>&nbsp; &nbsp; Organisation de la randonnée pédestre nationale</h6>
+			<p></p>
+		</div>
+		<input type="radio" name="tabs3" class="tabradio" id="tab11">
+		<label class="tablabel tablabel--13" for="tab11">Après-midi</label>
+		<div class="tab">
+			<h6><em><b><u>Activités générales </u></b></em></h6>
+			<h6><b>15h-18h</b>&nbsp; &nbsp; Visites en entreprise</h6>
+			<br>
+			<h6><em><b><u>Activités spéciales </u></b></em></h6>
+			<h6><b>15h-18h</b>&nbsp; &nbsp; Forum du Jamborée</h6>
+			<br>
+			<p></p>
+		</div>
+		<input type="radio" name="tabs3" class="tabradio" id="tab12">
+		<label class="tablabel tablabel--13" for="tab12">Soir</label>
+		<div class="tab">
+			<h6><b>-</b>&nbsp; &nbsp; Quartier libre </h6>
+			<p></p>
+		</div>
+	</div>
+
+	</div>
+	</p>
+	<p></p>
+	</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc10" type="radio" name="accordion">
+		<label class="accordion__label" for="acc10">18 Août 2019  (Jour 10)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<div class="page_single layout_fullwidth_padding">
+					<div class="tabs">
+						<input type="radio" name="tabs3" class="tabradio" id="tab13" checked="checked">
+						<label class="tablabel tablabel--13" for="tab13">Matin</label>
+						<div class="tab">
+							<h6><b>8h30-10h</b>&nbsp; &nbsp; Messe de clôture</h6>
+							<h6><b>10h30-12h</b>&nbsp; &nbsp; Envoi en mission des jeunes leaders</h6>
+							<h6><b>10h30-12h</b>&nbsp; &nbsp; Panel sur le Développement durable</h6>
+			<p></p>
+		</div>
+		<input type="radio" name="tabs3" class="tabradio" id="tab14">
+		<label class="tablabel tablabel--13" for="tab14">Après-midi</label>
+		<div class="tab">
+			<h6><b>14h30-18h</b>&nbsp; &nbsp; Carrefour rencontre</h6>
+			<br>
+			<p></p>
+		</div>
+		<input type="radio" name="tabs3" class="tabradio" id="tab15">
+		<label class="tablabel tablabel--13" for="tab15">Soir</label>
+		<div class="tab">
+			<h6><b>18h30-22h</b>&nbsp; &nbsp; Cérémonie de clôture + concert </h6>
+			<p></p>
+		</div>
+	</div>
+
+	</div>
+	</p>
+	<p></p>
+	</div>
+	</div>
+	<div class="accordion__item">
+		<input class="accordion__input" id="acc11" type="radio" name="accordion">
+		<label class="accordion__label" for="acc11">19 Août 2019  (Jour 11)<span></span></label>
+		<div class="accordion__content">
+			<p></p>
+			<p style="font-weight: bold; font-style: italic">
+				<a href="#" title="">Depart</a>
+			</p>
+		</div>
+	</div>
+	</div>
+
+
+	</div> <!--end of page single-->
+	<p style="text-align: right; padding-right: 25px;">
+		<a href="{{ asset('doc/programme.pdf') }}"><em>Téléchargez le programme</em></a>
+	</p>
+
+	</div>
+{% endblock %}

@@ -1,76 +1,235 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
+    <meta http-equiv="refresh" content="5" >
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
-{% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+    <meta name="keywords" content="Jamboree, SCOUT, OMMS, ASCCI, scoutisme"  />
+    <meta name="description" content="Le Jamboree Attoumglan 2019 qui se déroulera du 09 au 19 Aout 2019 sera un rassemblement national de 10 000 jeunes et adultes organisés par l’ASCCI" />
+    <meta name="Author" content="ASCCI-CENACOM, Delrodie AMOIKON">
+    <meta name="Copyright" content="https://www.scoutascci.org">
+    <meta name="Content-Language" content="FR">
+
+    <link rel="canonical" href="https://ascci.github.io/jamboree" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="Item" />
+    <meta property="og:title" content="ASCCI Jamboree 2019" />
+    <meta property="og:description" content="Le Jamboree Attoumglan 2019 qui se déroulera du 09 au 19 Aout 2019 sera un rassemblement national de 10 000 jeunes et adultes organisés par l’ASCCI" />
+    <meta property="og:url" content="https://scoutascci.github.io/jamboree2019" />
+    <meta property="og:site_name" content="ASCCI Jamboree" />
+    <meta property="article:section" content="Item" />
+    <meta property="article:published_time" content="2018-01-20T15:25:59+00:00" />
+    <meta property="og:image" content="image/jamboree.png" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="Le Jamboree Attoumglan 2019 qui se déroulera du 09 au 19 Aout 2019 sera un rassemblement national de 10 000 jeunes et adultes organisés par l’ASCCI"/>
+    <meta name="twitter:title" content="ASCCI Jamboree 2019"/>
+    <meta name="twitter:domain" content="ASCCI"/>
+    <meta name="twitter:image:src" content="images/jamboree.png"/>
+
+    <link rel="apple-touch-icon" href="{{ absolute_url(asset('ressources/images/jamboree.png')) }}" />
+    <link rel="apple-touch-startup-image" href="{{ absolute_url(asset('ressources/images/icon-192.png')) }}">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ absolute_url(asset('ressources/css/swiper.css')) }}">
+        <link rel="stylesheet" href="{{ absolute_url(asset('ressources/style.css')) }}">
+        <link rel="stylesheet" href="{{ absolute_url(asset('ressources/compteur/timeTo.css')) }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body id="mobile_wrap">
+<div class="panel-overlay"></div>
+
+<div class="panel panel-left panel-reveal">
+    <!-- Slider -->
+    <div class="swiper-container-subnav multinav">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <nav class="main_nav_underline">
+                    <ul>
+                        <li><a href="{{ absolute_url(path('homepage'))}}"><img src="{{ absolute_url('ressources/images/icons/gray/home.png') }}" alt="Accueil" title="Accueil" /><span>Accueil</span></a></li>
+                        <li class="subnav opensubnav"><img src="{{ absolute_url('ressources/images/icons/gray/categories.png') }}" alt="Participer a Jamboree 2019" title="Participer a Jamboree 2019" /><span>Participation</span></li>
+                        <li><a href="https://scoutascci.org/#actu_jamboree"><img src="{{ absolute_url('ressources/images/icons/gray/mobile.png') }}" alt="Actualites" title="Actualites" /><span>Actualités</span></a></li>
+                        <li><a href="#"><img src="{{ absolute_url('ressources/images/icons/gray/users.png') }}" alt="Comité d'organisation" title="Comité d'organisation" /><span>Comité</span></a></li>
+                        <li><a href="{{ path('frontend_programme') }}"><img src="{{ absolute_url('ressources/images/icons/gray/blog.png') }}" alt="Programme" title="Programme" /><span>Programme</span></a></li>
+                        <li><a href="#"><img src="{{ absolute_url('ressources/images/icons/gray/photos.png') }}" alt="Site du jamboree" title="Site du jamboree" /><span>Site</span></a></li>
+
+
+                        <li><a href="https://scoutascci.org/boutique/"><img src="{{ absolute_url(asset('ressources/images/icons/gray/shop.png')) }}" alt="Boutique" title="Boutique" /><span>Boutique</span></a></li>
+
+                        <!--<li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Login</span></a></li>-->
+
+
+                    </ul>
+                </nav>
             </div>
+            <div class="swiper-slide">
+                <div class="subnav_header backtonav"><img src="{{ absolute_url(asset('ressources/images/icons/gray/back.png')) }}" alt="Retour au menu" title="Retour au menu" /><span>RETOUR AU MENU</span></div>
+                <nav class="main_nav_underline">
+                    <ul>
 
-            <div id="status">
-                <p>
-                    <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" fill="#759E1A"/></svg>
-
-                    Your application is now ready. You can start working on it at:
-                    <code>{{ base_dir }}</code>
-                </p>
+                        <!--<li><a href="http://jamboree.scoutascci.org/#register"><img src="images/icons/gray/features.png" alt="S'inscrire au jamboree 2019" title="S'inscrire au jamboree 2019" /><span>Inscription</span></a></li>-->
+                        <li><a href="http://jamboree.scoutascci.org/ticket"><img src="{{ absolute_url(asset('ressources/images/icons/gray/form.png')) }}" alt="Impression du ticket" title="Impression du ticket" /><span>Imprimé son reçu</span></a></li>
+                    </ul>
+                </nav>
             </div>
-
-            <div id="next">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id="icon-book" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-12.5 9 64 64" enable-background="new -12.5 9 64 64" xml:space="preserve">
-                        <path fill="#AAA" d="M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z"/>
-                    </svg>
-
-                    Read the documentation to learn
-                    <a href="https://symfony.com/doc/{{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION')[:3] }}/page_creation.html">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
-            </div>
-
         </div>
     </div>
+</div>
+
+<div class="panel panel-right panel-reveal">
+    <div class="user_login_info">
+
+        <div class="user_thumb">
+
+            <div class="user_details">
+                <p>Bonjour cher, <span>campeur</span></p>
+            </div>
+            <div class="user_avatar"><img src="{{ absolute_url(asset('ressources/images/jamboree.png')) }}" alt="logo Jamboree 2019" title="Logo Jamboree 2019" /></div>
+        </div>
+
+        <nav class="user-nav">
+            <ul>
+                <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/settings.png')) }}" alt="Code d'invisibilité" title="Code d'invisibilité" /><span>Mon code d'invisibilité</span></a></li>
+                <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Se connecter" title="Se connecter" /><span>Connexion</span><!--<strong>5</strong>--></a></li>
+                <li><a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/gray/lock.png')) }}" alt="Deconnexion" title="Deconnexion" /><span>Déconnexion</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="views">
+
+    <div class="view view-main">
+
+
+
+        <div class="pages">
+
+            <div data-page="index" class="page homepage">
+                <div class="page-content">
+
+                    <div class="navbar navbar--fixed navbar--fixed-top">
+                        <div class="navbar__col navbar__col--title">
+                            <a href="index.html">Jamboree 2019</a>
+                        </div>
+                        <div class="navbar__col navbar__col--icon navbar__col--icon-right">
+                            <a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/menu.png" alt="" title="" /></a>
+                        </div>
+                    </div>
+
+                    <!-- Slider -->
+                    <div class="swiper-container slidertoolbar">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide" style="background-image:url({{ absolute_url(asset('ressources/images/bg3.jpg')) }});">
+
+                                <div class="slider-caption" style="color: #fff">
+
+                                    <h2 data-swiper-parallax="-100%" style="color: #fff"><!--Jamboree Attoumgblan 2019--></h2>
+                                    <p style="font-weight: normal;">
+                                        Chers amis jeunes,<br>
+                                        Frères et sœurs scouts,<br>
+                                    </p>
+                                    <p style="font-weight:normal; text-align:justify;">
+                                        Nous y sommes, le 11ème Jamborée Attoumgblan ouvre ses portes. C’est un jamborée du professionnalisme, d’expérience, de son et de lumières ; le jamborée waouh !!
+                                    </p>
+                                    <p style="font-weight:normal; text-align:justify;">
+                                        Autour du thème « scouts, jeunes citoyens engagés pour le développement durable », vous êtes plus de 10 800 jeunes
+                                        et encadreurs scouts venus des 15 régions de la Côte d’Ivoire et des pays invités tels que la France, ...
+                                    </p>
+                                    <p style="font-weight:bold;text-align:left; font-style: italic">
+                                        <a href="{{ path('mot_bienvenue') }}">&raquo; Lire l'intégralité du Mot de Bienvenue du Commissaire National</a>
+                                    </p>
+                                    <!--<p style="font-weight: bold;">Un Jamborée de sons et de lumières <br> qui débutera dans exactement :
+									</p>-->
+                                    <!--<p data-swiper-parallax="-30%" style="color: #fff; text-align: justify">
+										<img src="images/jamboree.png" alt="" width="150" style="float: left; padding-right:x;">
+									  Cette 11eme Edition de l’Attoumglan 2019 qui se déroulera du 09 au 19 Aout 2019 sera un rassemblement national de 10 000 jeunes et adultes organisés par l’ASCCI et se tiendra dans la région de YOPOUGON plus précisément à SONGON, elle sera marquée par la participation des scouts de différents pays, de non-scouts, et aboutira à la réalisation d’un projet communautaire en faveur des populations du village hôte.
+									</p>-->
+                                    <!--<p style="color: #fff">
+
+									  Au cœur de la 11ème édition du Jamboree Amgblan:
+
+									  </p>
+									  <ul style="text-align: left">
+										  <li>- La promotion du développement durable</li>
+										  <li>- La célébration de la fraternité ;</li>
+										  <li>- Un brassage de cultures et moments de partage grandiose </li>
+										  <li>- Un exemple de vie communautaire</li>
+									  </ul><br><br>-->
+
+
+
+
+
+                                    <!--
+									 <a href="http://jamboree.scoutascci.org/#register" class="slider-caption__more" data-swiper-parallax="-60%">Notifications</a>
+									 <button class="slider-caption__more btn-install" data-swiper-parallax="-60%">Code d'invisibilité</button>-->
+                                </div>
+                            </div>
+
+                            <div class="swiper-container-toolbar swiper-toolbar">
+                                <div class="swiper-pagination-toolbar"></div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide toolbar-icon">
+                                        <a href="#" data-panel="right" class="open-panel"><img src="{{ absolute_url(asset('ressources/images/icons/blue/user.png')) }}" alt="" title="Voir son profil" /></a>
+                                        <a href="{{ path('frontend_programme') }}"><img src="{{ absolute_url(asset('ressources/images/icons/blue/blog.png')) }}" alt="" title="" /></a>
+                                        <a href="#" data-panel="left" class="open-panel"><img src="{{ absolute_url(asset('ressources/images/icons/blue/menu.png')) }}" alt="" title="" /></a>
+                                        <a href="#"><img src="{{ absolute_url(asset('ressources/images/icons/blue/photos.png')) }}" alt="" title="" /></a>
+                                        <a href="#" data-popup=".popup-social" class="open-popup"><img src="{{ absolute_url(asset('ressources/images/icons/blue/contact.png')) }}" alt="" title="" /></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Social Icons Popup -->
+<div class="popup popup-social">
+    <div class="content-block" >
+        <h4>Nous contacter</h4>
+        <div style="text-align: left; ">
+
+            <p  style="text-align: left; "><strong>Localisation :</strong>Plateau, Abidjan Côte d'ivoire</p>
+            <p style="text-align: left; "><strong>Mail : </strong>
+                <a href="mailto:infos@scoutascci.org" title="">infos@scoutascci.org</a> /
+                <a href="mailto:ascciinter@scoutascci.org" title="">ascciinter@scoutascci.org</a>
+            </p>
+            <p style="text-align: left; ">
+                <strong>Telephone : </strong> <a href="tel:+225 20223522" title="">+225 20223522</a> /
+                <a href="tel:+225 57464988" title="">57464988</a> /
+                <a href="tel:+225 47265826" title="">47265826</a> /
+            </p>
+            <p style="text-align: left; ">
+                <strong>website : </strong> <a href="https://www.scoutascci.org" title="">https://www.scoutascci.org</a>
+            </p>
+        </div>
+        <ul class="social_share">
+            <li><a href="https://www.facebook.com/scoutascci"><img src="images/icons/black/facebook.png" alt="" title="" /><span>FACEBOOK</span></a></li>
+            <li><a href="http://twitter.com/scoutascci"><img src="images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span></a></li>
+            <li><a href="https://www.scoutascci.org/"><img src="images/icons/black/dribbble.png" alt="" title="" /><span>Website</span></a></li>
+        </ul>
+        <div class="close_popup_button"><a href="#" class="close-popup" data-popup=".popup-social"><img src="images/icons/black/menu_close.png" alt="" title="" /></a></div>
+    </div>
+</div>
+{% block javascripts %}
+    <script src="{{ absolute_url(asset('ressources/js/jquery-3.3.1.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('ressources/js/swiper.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('ressources/js/jquery.validate.min.js')) }}"></script>
+    <script src="{{ absolute_url(asset('ressources/js/jquery.custom.js')) }}"></script>
 {% endblock %}
-
-{% block stylesheets %}
-<style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
-
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
-
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-    }
-</style>
-{% endblock %}
+</body>
+</html>
