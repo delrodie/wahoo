@@ -10,4 +10,44 @@ namespace AppBundle\Repository;
  */
 class ParticipantRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * nombre de participants par branche
+     */
+    public function compteur($branche)
+    {
+        return $this->createQueryBuilder('p')
+                    ->select('count(p.id)')
+                    ->where('p.branche = :id')
+                    ->andWhere('p.flag IS NULL')
+                    ->setParameter('id', $branche)
+                    ->getQuery()->getSingleScalarResult()
+            ;
+    }
+
+    /**
+     * Liste des ID des participants par branche
+     */
+    public function listID($branche)
+    {
+        return $this->createQueryBuilder('p')
+                    ->select('p.id')
+                    ->where('p.branche = :id')
+                    ->andWhere('p.flag IS NULL')
+                    ->setParameter('id',$branche)
+                    ->getQuery()->getResult()
+            ;
+    }
+
+    /**
+     * liste des participants par branche
+     */
+    public function findListBranche($branche)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.branche = :id')
+            ->andWhere('p.flag = 1')
+            ->setParameter('id',$branche)
+            ->getQuery()->getResult()
+            ;
+    }
 }

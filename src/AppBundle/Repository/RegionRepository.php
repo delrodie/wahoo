@@ -10,4 +10,11 @@ namespace AppBundle\Repository;
  */
 class RegionRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Liste des regions
+     */
+    public function findRegion()
+    {
+        return $this->createQueryBuilder('r')->where('r.id < 16')->getQuery()->getResult();
+    }
 }

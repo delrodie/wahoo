@@ -27,4 +27,30 @@ class DefaultController extends Controller
         return $this->render('default/bienvenue.html.twig');
     }
 
+
+
+    /**
+     * @Route("/region", name="region")
+     */
+    public function regionAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $regions = $em->getRepository("AppBundle:Region")->findRegion();
+        return $this->render("default/region_liste.html.twig",[
+            'regions' => $regions,
+        ]);
+    }
+
+    /**
+     * @Route("/branche", name="branche")
+     */
+    public function brancheAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $branches = $em->getRepository("AppBundle:Branche")->findAll();
+        return $this->render("default/branche_liste.html.twig",[
+            'branches' => $branches,
+        ]);
+    }
+
 }
