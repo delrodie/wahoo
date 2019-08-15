@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Participants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenoms</th>
+                <th>Sexe</th>
+                <th>Naissance</th>
+                <th>Cel</th>
+                <th>Code</th>
+                <th>Invisible</th>
+                <th>Flag</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for participant in participants %}
+            <tr>
+                <td><a href="{{ path('participant_show', { 'id': participant.id }) }}">{{ participant.id }}</a></td>
+                <td>{{ participant.nom }}</td>
+                <td>{{ participant.prenoms }}</td>
+                <td>{{ participant.sexe }}</td>
+                <td>{{ participant.naissance }}</td>
+                <td>{{ participant.cel }}</td>
+                <td>{{ participant.code }}</td>
+                <td>{{ participant.invisible }}</td>
+                <td>{{ participant.flag }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('participant_show', { 'id': participant.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
