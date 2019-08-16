@@ -1,3 +1,3 @@
 {% for branche in branches  %}
-	<li><a href="{{ path('participant_branche', {'branche': branche.id}) }}">{{ branche.libelle }}</a></li>
+	<li><a href="{{ path('invisible_liste', {'branche': branche.id}) }}">{{ branche.libelle }}</a></li>
 {% endfor %}
