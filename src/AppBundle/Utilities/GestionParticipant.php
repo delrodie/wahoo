@@ -53,11 +53,11 @@ class GestionParticipant
             $participant = $this->em->getRepository("AppBundle:Participant")->findOneBy(['id'=>$value, 'flag'=>null]);
             $invisible = $this->em->getRepository("AppBundle:Participant")->findOneBy(['id'=>$aleatoire, 'branche'=>$branche, 'flag'=>null]);
             if ($participant){
+                while (!$invisible){
+                    $aleatoire = rand($key,10817);
+                    $invisible = $this->em->getRepository("AppBundle:Participant")->findOneBy(['id'=>$aleatoire, 'branche'=>$branche, 'flag'=>null]);
+                }
                 if ($invisible){
-                    while (!$invisible){
-                        $aleatoire = rand($key,10817);
-                        $invisible = $this->em->getRepository("AppBundle:Participant")->findOneBy(['id'=>$aleatoire, 'branche'=>$branche, 'flag'=>null]);
-                    }
                     $participant->setInvisible($invisible->getCode());
                     $participant->setFlag(1);
                     $this->em->flush();
