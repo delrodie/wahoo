@@ -1,14 +1,16 @@
-{% extends 'backend.html.twig' %}
-{% block title %} Liste globale des participants{% endblock %}
+{% extends 'base.html.twig' %}
+{% block title %} Liste des participants de {{ region.name }}{% endblock %}
 {% block body %}
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Jamboree 2019
+                {{ region.name }}
+                <small><span class="text-success">{{ effectif|number_format(0,'','.') }}</span> participants</small>
             </h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Accueil</a></li>
-                <li class="breadcrumb-item active">Liste des participants</li>
+                <li class="breadcrumb-item"><a href="#">Region</a></li>
+                <li class="breadcrumb-item active">{{ region.name|title }}</li>
             </ol>
         </section>
         <section class="content">
@@ -19,13 +21,25 @@
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
-                                        <label>Regions</label>
-                                        <form action="{{ path('region_index') }}">
-                                            <input type="hidden" name="branche" value="{{ branche }}">
-                                            <select name="region" class="form-control select2 w-p100" onchange="this.form.submit()">
-                                                <option selected="selected" disabled="disabled">-- Selectionnez la region --</option>
-                                                {% for region in regions %}
-                                                    <option value="{{ region.id }}">{{ region.libelle }}</option>
+                                        <label>Districts</label>
+                                        <form action="{{ absolute_url(path('district_liste')) }}">
+                                            <select name="district" class="form-control select2 w-p100" onchange="this.form.submit()">
+                                                <option selected="selected" disabled="disabled">-- Selectionnez le district --</option>
+                                                {% for district in districts %}
+                                                    <option value="{{ district.id }}">{{ district.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label>Paroisses</label>
+                                        <form action="{{ absolute_url(path('paroisse_liste')) }}">
+                                            <select name="paroisse" class="form-control select2 w-p100" onchange="this.form.submit()">
+                                                <option selected="selected">-- Selectionnez le groupe --</option>
+                                                {% for paroisse in paroisses %}
+                                                    <option value="{{ paroisse.id }}">{{ paroisse.name }}</option>
                                                 {% endfor %}
                                             </select>
                                         </form>
@@ -52,34 +66,24 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>REGION</th>
                                         <th>DISTRICT</th>
+                                        <th>PAROISSE</th>
                                         <th>NOM & PRENOMS</th>
                                         <th>SEXE</th>
-                                        <!--<th>CONTACT</th>-->
-                                        <th>BRANCHE</th>
-                                        <th>CODE</th>
-                                        <th>INVISIBLE</th>
+                                        <th>CONTACT</th>
+                                        <th>INSCRIPTION</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for participant in participants %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ participant.region.libelle|title }}</td>
-                                            <td>{{ participant.district.libelle|title }}</td>
-                                            <td>{{ participant.nom|raw|upper }} {{ participant.prenoms|title }}</td>
-                                            <td class="text-center">
-                                                {% if (participant.sexe == "homme") %}
-                                                    M
-                                                {% else %}
-                                                    F
-                                                {% endif %}
-                                            </td>
-                                            <!--<td class="text-center">{{ participant.cel }}</td>-->
-                                            <td class="text-center">{{ participant.branche.libelle|title }}</td>
-                                            <td class="text-center">{{ participant.code }}</td>
-                                            <td class="text-center">{{ participant.invisible }}</td>
+                                            <td>{{ participant.district.name|title }}</td>
+                                            <td>{{ participant.paroisse.name }}</td>
+                                            <td>{{ participant.lastname|upper }} {{ participant.firstname|title }}</td>
+                                            <td class="text-center">{{ participant.gender }}</td>
+                                            <td class="text-center">{{ participant.celPhoneNum }}</td>
+                                            <td class="text-center">{{ participant.cpmPaymentDate|date('d-m-Y') }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>

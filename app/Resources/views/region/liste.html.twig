@@ -1,5 +1,5 @@
 {% extends 'backend.html.twig' %}
-{% block title %} Liste globale des participants{% endblock %}
+{% block title %} Liste globale des regions{% endblock %}
 {% block body %}
     <div class="content-wrapper">
         <section class="content-header">
@@ -8,42 +8,16 @@
             </h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Accueil</a></li>
-                <li class="breadcrumb-item active">Liste des participants</li>
+                <li class="breadcrumb-item active">Liste des regions</li>
             </ol>
         </section>
         <section class="content">
             <div class="row">
                 <div class="col-12">
-                    <div class="box">
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label>Regions</label>
-                                        <form action="{{ path('region_index') }}">
-                                            <input type="hidden" name="branche" value="{{ branche }}">
-                                            <select name="region" class="form-control select2 w-p100" onchange="this.form.submit()">
-                                                <option selected="selected" disabled="disabled">-- Selectionnez la region --</option>
-                                                {% for region in regions %}
-                                                    <option value="{{ region.id }}">{{ region.libelle }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
 
                     <div class="box box-solid bg-dark">
                         <div class="box-header with-border">
-                            <h6 class="box-subtitle">Liste des participants</h6>
+                            <h6 class="box-subtitle">Liste des regions</h6>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -52,34 +26,16 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>REGION</th>
-                                        <th>DISTRICT</th>
-                                        <th>NOM & PRENOMS</th>
-                                        <th>SEXE</th>
-                                        <!--<th>CONTACT</th>-->
-                                        <th>BRANCHE</th>
                                         <th>CODE</th>
-                                        <th>INVISIBLE</th>
+                                        <th>NOM</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for participant in participants %}
+                                    {% for region in regions %}
                                         <tr>
                                             <td>{{ loop.index }}</td>
-                                            <td>{{ participant.region.libelle|title }}</td>
-                                            <td>{{ participant.district.libelle|title }}</td>
-                                            <td>{{ participant.nom|raw|upper }} {{ participant.prenoms|title }}</td>
-                                            <td class="text-center">
-                                                {% if (participant.sexe == "homme") %}
-                                                    M
-                                                {% else %}
-                                                    F
-                                                {% endif %}
-                                            </td>
-                                            <!--<td class="text-center">{{ participant.cel }}</td>-->
-                                            <td class="text-center">{{ participant.branche.libelle|title }}</td>
-                                            <td class="text-center">{{ participant.code }}</td>
-                                            <td class="text-center">{{ participant.invisible }}</td>
+                                            <td class="text-center">{{ region.code }}</td>
+                                            <td>{{ region.libelle|title }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>

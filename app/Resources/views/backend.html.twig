@@ -71,7 +71,15 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="{{ path('region_liste') }}">
+						<i class="icon-home"></i> <span>Régions</span>
+						<span class="pull-right-container">
+                                      <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('participant_index') }}">
 						<i class="icon-home"></i> <span>Participants</span>
 						<span class="pull-right-container">
                                       <i class="fa fa-angle-right pull-right"></i>
@@ -89,7 +97,7 @@
                                 <ul class="treeview-menu">
                                 </ul>
                             </li>-->
-				<li class="treeview">
+				<!--<li class="treeview">
 					<a href="#">
 						<i class="icon-compass"></i>
 						<span>Regions</span>
@@ -100,7 +108,7 @@
 					<ul class="treeview-menu">
 						{{ render(url('region')) }}
 					</ul>
-				</li>
+				</li>-->
 				<li class="treeview">
 					<a href="#">
 						<i class="icon-compass"></i>

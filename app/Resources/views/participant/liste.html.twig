@@ -14,32 +14,6 @@
         <section class="content">
             <div class="row">
                 <div class="col-12">
-                    <div class="box">
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label>Regions</label>
-                                        <form action="{{ path('region_index') }}">
-                                            <input type="hidden" name="branche" value="{{ branche }}">
-                                            <select name="region" class="form-control select2 w-p100" onchange="this.form.submit()">
-                                                <option selected="selected" disabled="disabled">-- Selectionnez la region --</option>
-                                                {% for region in regions %}
-                                                    <option value="{{ region.id }}">{{ region.libelle }}</option>
-                                                {% endfor %}
-                                            </select>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
 
                     <div class="box box-solid bg-dark">
                         <div class="box-header with-border">

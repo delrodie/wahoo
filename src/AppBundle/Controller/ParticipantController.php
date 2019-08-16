@@ -27,7 +27,7 @@ class ParticipantController extends Controller
 
         $participants = $em->getRepository('AppBundle:Participant')->findAll();
 
-        return $this->render('participant/index.html.twig', array(
+        return $this->render('participant/liste.html.twig', array(
             'participants' => $participants,
         ));
     }
@@ -44,9 +44,14 @@ class ParticipantController extends Controller
         //dump($gestionParticipant);die();
 
         $participants = $em->getRepository('AppBundle:Participant')->findListBranche($branche);
+        $regions = $em->getRepository("AppBundle:Region")->findAll();
+        $districts = $em->getRepository("AppBundle:District")->findAll();
 
         return $this->render('participant/index.html.twig', array(
             'participants' => $participants,
+            'regions' => $regions,
+            'districts' => $districts,
+            'branche' => $branche
         ));
     }
 
@@ -56,7 +61,7 @@ class ParticipantController extends Controller
      * @Route("/codification/{debut}-{fin}", name="participant_show")
      * @Method("GET")
      */
-    public function shwAction(GestionParticipant $gestionParticipant, $debut, $fin)
+    public function showAction(GestionParticipant $gestionParticipant, $debut, $fin)
     {
         $gestionParticipant->codification($debut,$fin);
         $em = $this->getDoctrine()->getManager();
