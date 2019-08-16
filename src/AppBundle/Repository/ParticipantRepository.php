@@ -45,7 +45,7 @@ class ParticipantRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->createQueryBuilder('p')
             ->where('p.branche = :id')
-            ->andWhere('p.flag = 1')
+            ->andWhere('p.flag = 1part')
             ->setParameter('id',$branche)
             ->getQuery()->getResult()
             ;
